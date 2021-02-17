@@ -2,9 +2,9 @@
 title: "Docencia"
 date: 2020-10-26T18:10:06+01:00
 draft: false
-featured_image: "http://img.youtube.com/vi/4J_BgKyR7G0/0.jpg"
 translationKey: docencia
 tags: ["Teaching"]
+toc: true
 menu:
   main: {}
 ---

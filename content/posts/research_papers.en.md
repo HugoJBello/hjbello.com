@@ -3,6 +3,7 @@ title: "Research"
 tags: ["Research"]
 categories: ["Research"]
 date: 2020-10-26T18:10:06+01:00
+toc: true
 menu:
   main: {}
 ---

@@ -1,8 +1,8 @@
 
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <header>
-      <h2><i class="fas fa-journal-whills"></i> {{.Title}}</h2>
-      </header>
+{{- if .Params.toc -}}
+<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+  <p class="f5 b mb3"><i class="fas fa-journal-whills"></i> {{ i18n "whatsInThis" . }}</p>
     {{ .TableOfContents }}
-    </ul>
 </div>
+{{- end -}}
+

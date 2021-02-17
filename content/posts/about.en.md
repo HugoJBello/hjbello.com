@@ -4,7 +4,8 @@ date: 2019-10-26T18:10:06+01:00
 categories: ["About"]
 translationKey: About
 tags: ["About", "Teaching", "Coding"]
-draft: false
+menu:
+  main: {}
 ---
 
 ![image](https://avatars2.githubusercontent.com/u/18718281?s=460&v=4 "Logo Title Text 1")
