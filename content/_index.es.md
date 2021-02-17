@@ -1,3 +1,3 @@
 Bienvenido a mi página.
 
-[english version](/)
+[english version](/en)
