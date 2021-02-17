@@ -36,6 +36,8 @@ enableRobotsTXT = true
   #featured_image = "/images/gohugo-default-sample-hero-image.jpg"
   featured_image = "/images/frentes.jpg"
   recent_posts_number = 2
+  custom_css = ["css/custom.css"]
+
 
 [languages]
   [languages.en]

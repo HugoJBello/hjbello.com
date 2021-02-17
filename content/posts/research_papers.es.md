@@ -7,7 +7,7 @@ menu:
   main: {}
 ---
 
-# Investigación
+## Investigación
 En estos momentos colaboro con los siguientes proyectos
 - Uso de Big Data y Deep Learning para la clasificación de noticias y posts en redes: [github news-scrapers](https://github.com/news-scrapers)
 - Uso de técnicas de visualización y análisis de datos en el daño muscular y el estres: [grupo investigación](https://cytuva.funge.uva.es/proyecto.php?id=649)
@@ -17,7 +17,7 @@ En estos momentos colaboro con los siguientes proyectos
 - Uso de técnicas de visualización de datos para estudiar la degeneración macular por la edad *(comenzando)*
 - Estudio estadístico sobre el impacto de la COVID-19 en trabajadores sanitarios *(comenzando)*
 
-# Más información
+## Más información
 - [google scholar](https://scholar.google.es/citations?user=JpjgRzsAAAAJ&hl=en)
 - [researchgate](https://www.researchgate.net/profile/Hugo_Bello3)
 - [pubmed](https://pubmed.ncbi.nlm.nih.gov/?term=Hugo+J.+Bello)
