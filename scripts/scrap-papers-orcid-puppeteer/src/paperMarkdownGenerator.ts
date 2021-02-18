@@ -41,17 +41,20 @@ main: {}
 
     }
 
-    private generateMarkdownLang = (papers: ExtractedPaper[], language:string) => {
+    private generateMarkdownLang = (publishedPapers: ExtractedPaper[], language:string) => {
 
         let papersList: string
 
         if (language === "es") {
-            papersList = this.headMarkDownEs
+            const publishedPapersSectionHeadEs = "## Artículos publicados"
+            papersList = this.headMarkDownEs + "\n" + publishedPapersSectionHeadEs
         } else {
-            papersList = this.headMarkDownEn
+            const publishedPapersSectionHeadEn = "## Published papers"
+            papersList = this.headMarkDownEn + "\n" + publishedPapersSectionHeadEn
         }
 
-        for (const paper of papers) {
+
+        for (const paper of publishedPapers) {
             const mdPaper = this.generatePaperEntry(paper,language)
             papersList = papersList + "\n\n" + mdPaper
         }
@@ -60,16 +63,16 @@ main: {}
     }
 
     private generatePaperEntry = (paper: ExtractedPaper, language:string) => {
-        let mdPaper = `> **${paper.title}**`
+        let mdPaper = "1. " + `**${paper.title}**`
 
         if (paper.journalType) {
-            mdPaper = mdPaper + `\n> ${paper.date} - *${paper.journal}*  (${paper.journalType})`
+            mdPaper = mdPaper + `\n ${paper.date} - *${paper.journal}*  (${paper.journalType})`
         } else {
-            mdPaper = mdPaper + `\n> ${paper.date} - *${paper.journal}*`
+            mdPaper = mdPaper + `\n ${paper.date} - *${paper.journal}*`
         }
 
         if (paper.doi) {
-            mdPaper = mdPaper + `\n> *[${paper.doi}](${paper.doi})*`
+            mdPaper = mdPaper + `\n *[${paper.doi}](${paper.doi})*`
         }
 
         return mdPaper

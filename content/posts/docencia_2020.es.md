@@ -19,4 +19,4 @@ Estoy subiendo los vídeos de la asignatura a la siguiente lista de [reporducci�
 
 
 ## Materiales cursos pasados
-* Programación y métodos numéricos con Octave (2019): [scripts](https://github.com/HugoJBello/clases-octave-2019)
+> Programación y métodos numéricos con Octave (2019): [scripts](https://github.com/HugoJBello/clases-octave-2019)
