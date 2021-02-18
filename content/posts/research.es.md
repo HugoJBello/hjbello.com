@@ -19,10 +19,15 @@ En estos momentos colaboro con los siguientes proyectos
 - Estudio estadístico sobre el impacto de la COVID-19 en trabajadores sanitarios *(comenzando)*
 
 ## Más información
+
+consulta una lista de mis artículos [aquí en la web](/posts/papers)
+
+Puedes ver más también aquí
 - [google scholar](https://scholar.google.es/citations?user=JpjgRzsAAAAJ&hl=en)
 - [researchgate](https://www.researchgate.net/profile/Hugo_Bello3)
 - [pubmed](https://pubmed.ncbi.nlm.nih.gov/?term=Hugo+J.+Bello)
 - [orcid](https://orcid.org/0000-0002-3687-1938)
+- [arxiv](https://arxiv.org/search/?searchtype=author&query=Bello%2C+H+J&order=-announced_date_first&size=50&abstracts=show)
 
 <!--
 tags: research

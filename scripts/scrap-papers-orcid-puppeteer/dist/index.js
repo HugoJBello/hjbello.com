@@ -21,9 +21,9 @@ const paperMarkdownGenerator_1 = require("./paperMarkdownGenerator");
     fs_1.default.writeFileSync("data/papers_orcid.json", JSON.stringify(papers));
     const paperMarkdownGenrator = new paperMarkdownGenerator_1.PaperMarkdownGenerator();
     const { spanishVersion, englishVersion } = paperMarkdownGenrator.generateMarkdown(papers);
-    fs_1.default.writeFileSync("data/papers_orcid.es.md", spanishVersion);
-    fs_1.default.writeFileSync("../../content/posts/papers_orcid.es.md", spanishVersion);
-    fs_1.default.writeFileSync("data/papers_orcid.en.md", englishVersion);
-    fs_1.default.writeFileSync("../../content/posts/papers_orcid.en.md", englishVersion);
+    fs_1.default.writeFileSync("data/papers.es.md", spanishVersion);
+    fs_1.default.writeFileSync("../../content/posts/papers.es.md", spanishVersion);
+    fs_1.default.writeFileSync("data/papers.en.md", englishVersion);
+    fs_1.default.writeFileSync("../../content/posts/papers.en.md", englishVersion);
 }))();
 //# sourceMappingURL=index.js.map

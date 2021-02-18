@@ -5,8 +5,6 @@ draft: false
 translationKey: Projects
 categories: ["Research"]
 tags: ["Research", "Coding"]
-menu:
-  main: {}
 ---
 
 There are some interesting projects that want to list here because I had a lot of fun doing them:

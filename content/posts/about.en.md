@@ -16,3 +16,9 @@ I am an associate teacher at the [University of Valladolid in Soria](https://cam
 Check my [linkedin](https://es.linkedin.com/in/hugo-j-bello-5b4650120), my [github](https://github.com/HugoJBello), my [stack-overflow](https://stackoverflow.com/users/7041393/hjbello) or my [google scholar](https://scholar.google.es/citations?user=JpjgRzsAAAAJ&hl=en)-
 
 
+[Here](/en/posts/papers) you can see a list of my papers
+
+[Here](/en/posts/research) you can see the research than I am doing
+
+[Here](/en/posts/cool_projects) you can see some programming project than I am working on.
+

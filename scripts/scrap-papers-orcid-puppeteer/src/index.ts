@@ -12,11 +12,11 @@ import {PaperMarkdownGenerator} from "./paperMarkdownGenerator";
 
     const {spanishVersion, englishVersion} =  paperMarkdownGenrator.generateMarkdown(papers)
 
-    fs.writeFileSync("data/papers_orcid.es.md", spanishVersion)
-    fs.writeFileSync("../../content/posts/papers_orcid.es.md", spanishVersion)
+    fs.writeFileSync("data/papers.es.md", spanishVersion)
+    fs.writeFileSync("../../content/posts/papers.es.md", spanishVersion)
 
-    fs.writeFileSync("data/papers_orcid.en.md", englishVersion)
-    fs.writeFileSync("../../content/posts/papers_orcid.en.md", englishVersion)
+    fs.writeFileSync("data/papers.en.md", englishVersion)
+    fs.writeFileSync("../../content/posts/papers.en.md", englishVersion)
 
 
 })();

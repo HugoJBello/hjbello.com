@@ -21,12 +21,15 @@ At this moment I collaborate with the following projects
 
 
 
-## Check my papers:
+## More:
+You can read a list of my papers [here in my web](/en/posts/papers)
 
+You can also check my work here
 - [google scholar](https://scholar.google.es/citations?user=JpjgRzsAAAAJ&hl=en)
 - [researchgate](https://www.researchgate.net/profile/Hugo_Bello3)
 - [pubmed](https://pubmed.ncbi.nlm.nih.gov/?term=Hugo+J.+Bello)
 - [orcid](https://orcid.org/0000-0002-3687-1938)
+- [arxiv](https://arxiv.org/search/?searchtype=author&query=Bello%2C+H+J&order=-announced_date_first&size=50&abstracts=show)
 
 <!--
 tags: research

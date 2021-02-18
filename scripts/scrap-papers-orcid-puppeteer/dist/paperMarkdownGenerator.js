@@ -27,7 +27,7 @@ translationKey: Research Papers
 tags: ["Research", "Papers"]
 toc: true
 menu:
-main: {}
+    main: {}
 ---
 
 

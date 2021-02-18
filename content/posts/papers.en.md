@@ -1,7 +1,7 @@
 
 ---
-title: "Artículos"
-date: 2021-02-18T12:21:27.007Z
+title: "Research Papers"
+date: 2021-02-18T12:33:43.906Z
 translationKey: Research Papers
 tags: ["Research", "Papers"]
 toc: true
@@ -11,7 +11,7 @@ menu:
 
 
     
-## Artículos publicados
+## Published papers
 
 1. **Early administration of aripiprazole long-acting injectable in acute inpatients with schizophrenia: a clinical report**
  2020 - *International Clinical Psychopharmacology*  (journal-article)

@@ -5,8 +5,6 @@ draft: false
 translationKey: Proyectos
 categories: ["Research"]
 tags: ["Research", "Coding"]
-menu:
-  main: {}
 ---
 
 Aquí algunos proyectos interesantes en los que estoy trabajando
