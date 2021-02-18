@@ -14,9 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const orcidScraper_1 = require("./orcidScraper");
 const fs_1 = __importDefault(require("fs"));
+const paperMarkdownGenerator_1 = require("./paperMarkdownGenerator");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const orcidScraper = new orcidScraper_1.OrcidScraper();
     const papers = yield orcidScraper.scrap();
     fs_1.default.writeFileSync("data/papers_orcid.json", JSON.stringify(papers));
+    const paperMarkdownGenrator = new paperMarkdownGenerator_1.PaperMarkdownGenerator();
+    const { spanishVersion, englishVersion } = paperMarkdownGenrator.generateMarkdown(papers);
+    fs_1.default.writeFileSync("data/papers_orcid_es.md", spanishVersion);
+    fs_1.default.writeFileSync("data/papers_orcid_en.md", englishVersion);
 }))();
 //# sourceMappingURL=index.js.map
