@@ -1,7 +1,11 @@
 import {OrcidScraper} from "./orcidScraper";
 import fs  from 'fs'
 import {PaperMarkdownGenerator} from "./paperMarkdownGenerator";
+import {ArxivScraper} from "./arxivScraper";
 (async () => {
+
+    const arxivScraper = new ArxivScraper()
+    const preprints = await arxivScraper.scrap()
 
     const orcidScraper = new OrcidScraper()
     const papers = await orcidScraper.scrap()

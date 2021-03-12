@@ -11,6 +11,9 @@ export interface ExtractedPaper {
     doi?: string,
     journalType?: string,
     date?: string
+    preprintDate?: string
+    url?: string
+    pdfPreprint?: string
 }
 
 export class OrcidScraper {
