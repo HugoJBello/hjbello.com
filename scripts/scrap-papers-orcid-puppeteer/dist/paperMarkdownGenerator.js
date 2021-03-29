@@ -53,11 +53,11 @@ menu:
             }
             if (language === "es") {
                 const publishedPapersSectionHeadEs = "## Preprints de Artículos";
-                papersList = this.headMarkDownEs + "\n" + publishedPapersSectionHeadEs;
+                papersList = papersList + "\n" + publishedPapersSectionHeadEs;
             }
             else {
                 const publishedPapersSectionHeadEn = "## Preprints";
-                papersList = this.headMarkDownEn + "\n" + publishedPapersSectionHeadEn;
+                papersList = papersList + "\n" + publishedPapersSectionHeadEn;
             }
             for (const paper of publishedPreprints) {
                 const mdPaper = this.generatePaperEntry(paper, language);

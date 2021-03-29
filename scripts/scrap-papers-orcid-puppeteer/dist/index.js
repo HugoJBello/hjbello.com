@@ -17,6 +17,7 @@ const fs_1 = __importDefault(require("fs"));
 const paperMarkdownGenerator_1 = require("./paperMarkdownGenerator");
 const arxivScraper_1 = require("./arxivScraper");
 (() => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("-----");
     const arxivScraper = new arxivScraper_1.ArxivScraper();
     const preprints = yield arxivScraper.scrap();
     const orcidScraper = new orcidScraper_1.OrcidScraper();

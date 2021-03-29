@@ -18,22 +18,19 @@ export class ArxivScraper {
         const browser = await puppeteer.launch({headless: true});
         const page = await browser.newPage();
         await page.goto(this.url, {
-            waitUntil: 'networkidle2',
         });
 
         const div = await page.$(".content")
         const papersCont = await div.$$(".arxiv-result")
-
-
 
         for (const paperCont of papersCont) {
             try {
                 const title = await this.extractTitle(paperCont,page)
                 const urls = await this.extractUrls(paperCont,page)
                 const date = await this.extractDate(paperCont,page)
-                console.log("\n")
+                console.log("--------------------------\n")
 
-                const paper: ExtractedPaper = {title, preprintDate:date, pdfPreprint:urls.pdf, url:urls.url}
+                const paper: ExtractedPaper = {title, date:date, pdfPreprint:urls.pdf, url:urls.pdf}
                 console.log(paper)
                 papers.push(paper)
             } catch (e) {
@@ -67,10 +64,9 @@ export class ArxivScraper {
 
     public extractTitle = async (paperCont: any, page:any) => {
         try {
-            const spans = await paperCont.$$("title")
-            const titleSpan = spans[0]
-            const title = await page.evaluate((element:any) => element.textContent, titleSpan);
-            return title
+            const infoDetail = await paperCont.$$("p")
+            const title = await page.evaluate((element:any) => element.textContent, infoDetail[1]);
+            return title.replace(/\n/g, "").trim()
         } catch (e) {
 
         }
@@ -79,9 +75,9 @@ export class ArxivScraper {
 
     public extractDate = async (paperCont: any,page:any) => {
         try {
-            const infoDetail = await paperCont.$(".is-size-7")
-            const infoDetailStr = await page.evaluate((element:any) => element.textContent, infoDetail);
-            return infoDetailStr
+            const infoDetail = await paperCont.$$("p")
+            const infoDetailStr = await page.evaluate((element:any) => element.textContent, infoDetail[4]);
+            return infoDetailStr.replace(/\n/g, "").trim()
         } catch (e) {
             //console.log(e)
         }
@@ -91,8 +87,8 @@ export class ArxivScraper {
     //_ngcontent-xsk-c0
     public extractAuthors = async (paperCont: any,page:any) => {
         try {
-            const infoDetail = await paperCont.$(".authors")
-            const infoDetailStr = await page.evaluate((element:any) => element.textContent, infoDetail);
+            const infoDetail = await paperCont.$$("p")
+            const infoDetailStr = await page.evaluate((element:any) => element.textContent, infoDetail[1]);
             console.log(infoDetailStr)
             return infoDetailStr
         } catch (e) {

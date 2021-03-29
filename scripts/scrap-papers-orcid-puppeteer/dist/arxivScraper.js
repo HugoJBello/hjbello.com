@@ -23,11 +23,9 @@ class ArxivScraper {
         this.url = "https://arxiv.org/search/?searchtype=author&query=Bello%2C+H+J&order=-announced_date_first&size=50&abstracts=show";
         this.scrap = () => __awaiter(this, void 0, void 0, function* () {
             const papers = [];
-            const browser = yield puppeteer_extra_1.default.launch({ headless: true });
+            const browser = yield puppeteer_extra_1.default.launch({ headless: false });
             const page = yield browser.newPage();
-            yield page.goto(this.url, {
-                waitUntil: 'networkidle2',
-            });
+            yield page.goto(this.url, {});
             const div = yield page.$(".content");
             const papersCont = yield div.$$(".arxiv-result");
             for (const paperCont of papersCont) {
@@ -35,8 +33,8 @@ class ArxivScraper {
                     const title = yield this.extractTitle(paperCont, page);
                     const urls = yield this.extractUrls(paperCont, page);
                     const date = yield this.extractDate(paperCont, page);
-                    console.log("\n");
-                    const paper = { title, preprintDate: date, pdfPreprint: urls.pdf, url: urls.url };
+                    console.log("--------------------------\n");
+                    const paper = { title, date: date, pdfPreprint: urls.pdf, url: urls.pdf };
                     console.log(paper);
                     papers.push(paper);
                 }
@@ -65,19 +63,18 @@ class ArxivScraper {
         });
         this.extractTitle = (paperCont, page) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const spans = yield paperCont.$$("title");
-                const titleSpan = spans[0];
-                const title = yield page.evaluate((element) => element.textContent, titleSpan);
-                return title;
+                const infoDetail = yield paperCont.$$("p");
+                const title = yield page.evaluate((element) => element.textContent, infoDetail[1]);
+                return title.replace(/\n/g, "").trim();
             }
             catch (e) {
             }
         });
         this.extractDate = (paperCont, page) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const infoDetail = yield paperCont.$(".is-size-7");
-                const infoDetailStr = yield page.evaluate((element) => element.textContent, infoDetail);
-                return infoDetailStr;
+                const infoDetail = yield paperCont.$$("p");
+                const infoDetailStr = yield page.evaluate((element) => element.textContent, infoDetail[4]);
+                return infoDetailStr.replace(/\n/g, "").trim();
             }
             catch (e) {
                 //console.log(e)
@@ -86,8 +83,8 @@ class ArxivScraper {
         //_ngcontent-xsk-c0
         this.extractAuthors = (paperCont, page) => __awaiter(this, void 0, void 0, function* () {
             try {
-                const infoDetail = yield paperCont.$(".authors");
-                const infoDetailStr = yield page.evaluate((element) => element.textContent, infoDetail);
+                const infoDetail = yield paperCont.$$("p");
+                const infoDetailStr = yield page.evaluate((element) => element.textContent, infoDetail[1]);
                 console.log(infoDetailStr);
                 return infoDetailStr;
             }

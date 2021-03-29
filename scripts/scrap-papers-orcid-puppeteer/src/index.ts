@@ -4,6 +4,7 @@ import {PaperMarkdownGenerator} from "./paperMarkdownGenerator";
 import {ArxivScraper} from "./arxivScraper";
 (async () => {
 
+    console.log("-----")
     const arxivScraper = new ArxivScraper()
     const preprints = await arxivScraper.scrap()
 
