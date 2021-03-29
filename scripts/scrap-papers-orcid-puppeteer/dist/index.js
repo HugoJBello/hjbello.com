@@ -23,7 +23,7 @@ const arxivScraper_1 = require("./arxivScraper");
     const papers = yield orcidScraper.scrap();
     fs_1.default.writeFileSync("data/papers_orcid.json", JSON.stringify(papers));
     const paperMarkdownGenrator = new paperMarkdownGenerator_1.PaperMarkdownGenerator();
-    const { spanishVersion, englishVersion } = paperMarkdownGenrator.generateMarkdown(papers);
+    const { spanishVersion, englishVersion } = paperMarkdownGenrator.generateMarkdown(papers, preprints);
     fs_1.default.writeFileSync("data/papers.es.md", spanishVersion);
     fs_1.default.writeFileSync("../../content/posts/papers.es.md", spanishVersion);
     fs_1.default.writeFileSync("data/papers.en.md", englishVersion);

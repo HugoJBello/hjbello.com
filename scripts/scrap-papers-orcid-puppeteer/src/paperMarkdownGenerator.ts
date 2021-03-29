@@ -33,15 +33,16 @@ menu:
 
 
     `
-    public generateMarkdown = (papers: ExtractedPaper[]) => {
+    public generateMarkdown = (papers: ExtractedPaper[], preprints: ExtractedPaper[]) => {
 
-        const papersInSpanish = this.generateMarkdownLang(papers, "es")
-        const papersInEnglish = this.generateMarkdownLang(papers, "en")
+        const papersInSpanish = this.generateMarkdownLang(papers, preprints, "es")
+        const papersInEnglish = this.generateMarkdownLang(papers, preprints, "en")
+
         return {spanishVersion: papersInSpanish, englishVersion:papersInEnglish}
 
     }
 
-    private generateMarkdownLang = (publishedPapers: ExtractedPaper[], language:string) => {
+    private generateMarkdownLang = (publishedPapers: ExtractedPaper[], publishedPreprints: ExtractedPaper[], language:string) => {
 
         let papersList: string
 
@@ -59,6 +60,20 @@ menu:
             papersList = papersList + "\n\n" + mdPaper
         }
 
+        if (language === "es") {
+            const publishedPapersSectionHeadEs = "## Preprints de Artículos"
+            papersList = this.headMarkDownEs + "\n" + publishedPapersSectionHeadEs
+        } else {
+            const publishedPapersSectionHeadEn = "## Preprints"
+            papersList = this.headMarkDownEn + "\n" + publishedPapersSectionHeadEn
+        }
+
+        for (const paper of publishedPreprints) {
+            const mdPaper = this.generatePaperEntry(paper,language)
+            papersList = papersList + "\n\n" + mdPaper
+        }
+
+
         return papersList
     }
 
@@ -73,6 +88,10 @@ menu:
 
         if (paper.doi) {
             mdPaper = mdPaper + `\n *[${paper.doi}](${paper.doi})*`
+        }
+
+        if (paper.url) {
+            mdPaper = mdPaper + `\n *[${paper.url}](${paper.url})*`
         }
 
         return mdPaper

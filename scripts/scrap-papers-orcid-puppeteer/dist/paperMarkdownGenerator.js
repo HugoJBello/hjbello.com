@@ -32,12 +32,12 @@ menu:
 
 
     `;
-        this.generateMarkdown = (papers) => {
-            const papersInSpanish = this.generateMarkdownLang(papers, "es");
-            const papersInEnglish = this.generateMarkdownLang(papers, "en");
+        this.generateMarkdown = (papers, preprints) => {
+            const papersInSpanish = this.generateMarkdownLang(papers, preprints, "es");
+            const papersInEnglish = this.generateMarkdownLang(papers, preprints, "en");
             return { spanishVersion: papersInSpanish, englishVersion: papersInEnglish };
         };
-        this.generateMarkdownLang = (publishedPapers, language) => {
+        this.generateMarkdownLang = (publishedPapers, publishedPreprints, language) => {
             let papersList;
             if (language === "es") {
                 const publishedPapersSectionHeadEs = "## Artículos publicados";
@@ -48,6 +48,18 @@ menu:
                 papersList = this.headMarkDownEn + "\n" + publishedPapersSectionHeadEn;
             }
             for (const paper of publishedPapers) {
+                const mdPaper = this.generatePaperEntry(paper, language);
+                papersList = papersList + "\n\n" + mdPaper;
+            }
+            if (language === "es") {
+                const publishedPapersSectionHeadEs = "## Preprints de Artículos";
+                papersList = this.headMarkDownEs + "\n" + publishedPapersSectionHeadEs;
+            }
+            else {
+                const publishedPapersSectionHeadEn = "## Preprints";
+                papersList = this.headMarkDownEn + "\n" + publishedPapersSectionHeadEn;
+            }
+            for (const paper of publishedPreprints) {
                 const mdPaper = this.generatePaperEntry(paper, language);
                 papersList = papersList + "\n\n" + mdPaper;
             }
@@ -63,6 +75,9 @@ menu:
             }
             if (paper.doi) {
                 mdPaper = mdPaper + `\n *[${paper.doi}](${paper.doi})*`;
+            }
+            if (paper.url) {
+                mdPaper = mdPaper + `\n *[${paper.url}](${paper.url})*`;
             }
             return mdPaper;
         };

@@ -14,7 +14,7 @@ import {ArxivScraper} from "./arxivScraper";
 
     const paperMarkdownGenrator = new PaperMarkdownGenerator()
 
-    const {spanishVersion, englishVersion} =  paperMarkdownGenrator.generateMarkdown(papers)
+    const {spanishVersion, englishVersion} =  paperMarkdownGenrator.generateMarkdown(papers, preprints)
 
     fs.writeFileSync("data/papers.es.md", spanishVersion)
     fs.writeFileSync("../../content/posts/papers.es.md", spanishVersion)
